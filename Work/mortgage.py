@@ -6,11 +6,14 @@ rate = 0.05
 payment = 2684.11
 total_paid = 0.0
 months  = 1
+extra_payment_start_month = 12*5+1
+extra_payment_end_month = (12*4 ) + extra_payment_start_month
+extra_payment = 1000
 while principal > 0:  
     principal = principal* (1+rate/12) - payment
     total_paid = total_paid + payment
-    if months <= 12:
-        total_paid += 1000
-        principal -= 1000
+    if extra_payment_start_month <=months <extra_payment_end_month :
+        total_paid += extra_payment
+        principal -= extra_payment
     months += 1    
 print('Total paid', total_paid , 'over' , months-1, 'months')
