@@ -20,7 +20,9 @@ while principal > 0:
     total_paid += payment + extra
     principal -= payment
     principal -= extra
-    months += 1    
-    print(index ,total_paid , principal )
-    index += 1
+    
+    if principal > 0:    
+        print(index ,total_paid , principal )
+        index += 1
+        months += 1    
 print('Total paid', total_paid , 'over' , months-1, 'months')
